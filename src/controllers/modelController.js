@@ -1,13 +1,18 @@
-const Workspace = sequelize.define('workspace', {
-  id: { type: Sequelize.INTEGER, autoIncrement: true },
+const Sequelize = require('sequelize');
+const db = require('../../keys')
+const sequelize = new Sequelize(db.key);
+
+
+const Workspace = sequelize.define('Workspace', {
+  // id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   title: Sequelize.STRING,
   description: Sequelize.TEXT,
   private: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false },
   createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW }
 })
 
-const Task = sequelize.define('task', {
-  id: { type: Sequelize.INTEGER, autoIncrement: true },
+const Task = sequelize.define('Task', {
+  id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   title: Sequelize.STRING,
   description: Sequelize.TEXT,
   deadline: Sequelize.DATE,
@@ -19,8 +24,8 @@ const Task = sequelize.define('task', {
   finished: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false }
 })
 
-const User = sequelize.define('user', {
-  id: { type: Sequelize.INTEGER, autoIncrement: true },
+const User = sequelize.define('User', {
+  id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   email: Sequelize.STRING,
   firstName: Sequelize.STRING,
   lastName: Sequelize.STRING,
@@ -28,11 +33,11 @@ const User = sequelize.define('user', {
 })
 
 
-User.hasMany(Workspace, { through: 'Workspace' });
-Task.hasMany(User, { through: 'User' });
-Task.hasOne(Workspace, { foreignKey: 'id' });
-Workspace.hasMany(User, { through: 'User' });
-Woskspace.hasMany(Task, { through: 'Task' });
+// User.belongsToMany(Workspace, { through: 'Workspace' });
+// Task.belongsToMany(User, { through: 'User' });
+// Task.hasOne(Workspace, { foreignKey: 'id' });
+// Workspace.belongsToMany(User, { through: 'User' });
+// Workspace.belongsToMany(Task, { through: 'Task' });
 
 
 
@@ -69,7 +74,7 @@ Woskspace.hasMany(Task, { through: 'Task' });
 
 sequelize.sync();
 
-exports.module = {
+module.exports = {
   workspace: Workspace,
   task: Task,
   user: User
