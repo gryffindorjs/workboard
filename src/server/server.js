@@ -24,6 +24,7 @@ app.post('/workspace', databaseController.createWorkspace);
 app.post('/user', databaseController.createUser);
 app.post('/task', databaseController.createTask);
 
+app.get('/login', databaseController.login);
 app.get('/user/:id', databaseController.getUser);
 app.get('/workspace/:id', databaseController.getWorkspace);
 app.get('/task/:id', databaseController.getTask);

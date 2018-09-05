@@ -30,13 +30,19 @@ const databaseController = {
     res.send('Task & Joins Created');
   },
 
-  getWorkspace: (req, res) => {
+  login: (req, res) => {
+    console.log(req.body);
     User.findOne({ username: req.body.username }).then((record) => {
-      console.log(record);
+      console.log('recordHERE', record.dataValues);
+      res.status(200);
+      res.send(record);
     })
+
   },
+  getUser: () => { },
+  getWorkspace: (req, res) => { },
   getTask: () => { },
-  getUser: (req, res) => { },
+
   patchWorkspace: () => { },
   patchTask: () => { },
   patchUser: () => { },
