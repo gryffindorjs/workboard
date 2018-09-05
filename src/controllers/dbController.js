@@ -31,9 +31,14 @@ const databaseController = {
   },
 
   login: (req, res) => {
-    console.log(req.body);
-    User.findOne({ username: req.body.username }).then((record) => {
-      console.log('recordHERE', record.dataValues);
+    // console.log('REQUEST', req.headers);
+    User.findOne({
+      where: {
+        username: req.headers.username,
+        password: req.headers.password
+      }
+    }).then((record) => {
+      console.log(record);
       res.status(200);
       res.send(record);
     })
