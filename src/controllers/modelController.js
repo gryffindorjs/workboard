@@ -24,6 +24,8 @@ const Task = sequelize.define('Task', {
 
 const User = sequelize.define('User', {
   // id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+  username: Sequelize.STRING,
+  password: Sequelize.STRING,
   email: Sequelize.STRING,
   firstName: Sequelize.STRING,
   lastName: Sequelize.STRING

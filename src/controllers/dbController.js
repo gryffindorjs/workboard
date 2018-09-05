@@ -24,7 +24,7 @@ const databaseController = {
   },
   getWorkspace: () => { },
   getTask: () => { },
-  getUser: () => { },
+  getUser: (req, res) => { },
   patchWorkspace: () => { },
   patchTask: () => { },
   patchUser: () => { },
