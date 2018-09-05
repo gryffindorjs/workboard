@@ -1,4 +1,4 @@
-module.exports = {
+const databaseController = {
   createWorkspace: {
 
   },
@@ -16,3 +16,6 @@ module.exports = {
   modifyOwnershipTask={},
   modifyOwnershipWorkspace={}
 }
+
+
+module.exports = databaseController;
