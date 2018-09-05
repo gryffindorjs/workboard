@@ -12,12 +12,10 @@ const Workspace = sequelize.define('Workspace', {
 })
 
 const Task = sequelize.define('Task', {
-  id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+  // id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   title: Sequelize.STRING,
   description: Sequelize.TEXT,
   deadline: Sequelize.DATE,
-  createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
-  lastModified: Sequelize.DATE,
   createdBy: Sequelize.INTEGER,
   lastModifiedBy: Sequelize.INTEGER,
   started: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false },
@@ -25,12 +23,11 @@ const Task = sequelize.define('Task', {
 })
 
 const User = sequelize.define('User', {
-  id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
+  // id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
   email: Sequelize.STRING,
   firstName: Sequelize.STRING,
-  lastName: Sequelize.STRING,
-  createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW }
-})
+  lastName: Sequelize.STRING
+});
 
 
 // User.belongsToMany(Workspace, { through: 'Workspace' });

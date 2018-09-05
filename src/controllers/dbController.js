@@ -10,11 +10,18 @@ const databaseController = {
     console.log(req.body);
     const workspace = Workspace.create({ title: req.body.title, description: req.body.description });
     res.status(200);
-    res.send('hello');
-    res.end();
+    res.send('Workspace Created');
   },
-  createTask: () => { },
-  createUser: () => { },
+  createTask: (req, res) => {
+    const task = Task.create({ title: req.body.title, description: req.body.description, })
+    res.status(200);
+    res.send('Task Created');
+  },
+  createUser: (req, res) => {
+    const user = User.create({ email: req.body.email, firstName: req.body.firstName, lastName: req.body.lastName })
+    res.status(200);
+    res.send("User Created");
+  },
   getWorkspace: () => { },
   getTask: () => { },
   getUser: () => { },
