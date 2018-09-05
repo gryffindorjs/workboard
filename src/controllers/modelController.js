@@ -8,7 +8,6 @@ const Workspace = sequelize.define('Workspace', {
   title: Sequelize.STRING,
   description: Sequelize.TEXT,
   private: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: false },
-  createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW }
 })
 
 const Task = sequelize.define('Task', {
@@ -31,34 +30,32 @@ const User = sequelize.define('User', {
   lastName: Sequelize.STRING
 });
 
+const TaskUser = sequelize.define('TaskUser', {
+  // id: { type: Sequelize.INTEGER, autoIncrement: true },
+  task: Sequelize.INTEGER,
+  user: Sequelize.INTEGER,
+  admin: Sequelize.BOOLEAN
+})
 
-// User.belongsToMany(Workspace, { through: 'Workspace' });
+const WorkspaceUser = sequelize.define('WorkspaceUser', {
+  // id: { type: Sequelize.INTEGER, autoIncrement: true },
+  workspace: Sequelize.INTEGER,
+  user: Sequelize.INTEGER,
+  admin: Sequelize.BOOLEAN
+})
+
+const WorkspaceTask = sequelize.define('WorkspaceTask', {
+  // id: { type: Sequelize.INTEGER, autoIncrement: true },
+  workspace: Sequelize.INTEGER,
+  task: Sequelize.INTEGER
+})
+
+
+// User.hasMany(Workspace, { through: 'Workspace' });
 // Task.belongsToMany(User, { through: 'User' });
 // Task.hasOne(Workspace, { foreignKey: 'id' });
 // Workspace.belongsToMany(User, { through: 'User' });
 // Workspace.belongsToMany(Task, { through: 'Task' });
-
-
-
-// const TaskUser = sequelize.define('taskUser', {
-//   id: { type: Sequelize.INTEGER, autoIncrement: true },
-//   task: Sequelize.INTEGER,
-//   user: Sequelize.INTEGER,
-//   admin: Sequelize.BOOLEAN
-// })
-
-// const WorkSpaceUser = sequelize.define('workspaceUser', {
-//   id: { type: Sequelize.INTEGER, autoIncrement: true },
-//   workspace: Sequelize.INTEGER,
-//   user: Sequelize.INTEGER,
-//   admin: Sequelize.BOOLEAN
-// })
-
-// const WorkspaceTask = sequelize.define('workspaceTask', {
-//   id: { type: Sequelize.INTEGER, autoIncrement: true },
-//   workspace: Sequelize.INTEGER,
-//   task: Sequelize.INTEGER
-// })
 
 
 // Workspace.hasMany(User, {foreignKey: 'senderId'});
@@ -76,5 +73,8 @@ sequelize.sync();
 module.exports = {
   workspace: Workspace,
   task: Task,
-  user: User
+  user: User,
+  taskUser: TaskUser,
+  workspaceUser: WorkspaceUser,
+  workspaceTask: WorkspaceTask
 }
