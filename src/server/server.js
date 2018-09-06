@@ -32,12 +32,13 @@ app.get('/task/:id', databaseController.getTask);
 app.patch('/user/:id', databaseController.patchUser);
 app.patch('/task/:id', databaseController.patchTask);
 app.patch('/workspace/:id', databaseController.patchWorkspace);
-app.patch('/workspaceAdmin/:id', databaseController.modifyOwnershipWorkspace);
-app.patch('/taskAdmin/:id', databaseController.modifyOwnershipTask);
+// these routes do not work yet
+// app.patch('/workspaceAdmin/:id', databaseController.modifyOwnershipWorkspace);
+// app.patch('/taskAdmin/:id', databaseController.modifyOwnershipTask);
 
-app.delete('/task/:id', databaseController.deleteTask);
-app.delete('/user/:id', databaseController.deleteUser);
-app.delete('/workspace/:id', databaseController.deleteWorkspace);
+// app.delete('/task/:id', databaseController.deleteTask);
+// app.delete('/user/:id', databaseController.deleteUser);
+// app.delete('/workspace/:id', databaseController.deleteWorkspace);
 
 
 const port = 8000
