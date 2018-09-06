@@ -44,11 +44,46 @@ const databaseController = {
     })
 
   },
-  getUser: () => { },
-  getWorkspace: (req, res) => { },
-  getTask: () => { },
+  getUser: (req, res) => {
+    User.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then((record) => {
+      res.status(200);
+      res.send(record);
+    })
+  },
+  getWorkspace: (req, res) => {
+    Workspace.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then((record) => {
+      res.status(200);
+      res.send(record);
+    })
+  },
+  getTask: (req, res) => {
+    Task.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then((record) => {
+      res.status(200);
+      res.send(record);
+    })
+  },
 
-  patchWorkspace: () => { },
+  patchWorkspace: (req, res) => {
+    Workspace.update(
+      req.body,
+      { returning: true, where: { id: req.params.id } }
+    ).then(function ([rows, [updated]]) {
+      res.json(updated)
+    })
+  }
+  ,
   patchTask: () => { },
   patchUser: () => { },
   deleteWorkspace: () => { },
