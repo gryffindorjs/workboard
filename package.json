@@ -7,7 +7,7 @@
     "start": "nodemon src/server/index.js",
     "build": "webpack --mode production",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "server": "nodemon src/server/index.js",
+    "server": "nodemon src/server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,11 +16,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "nodemon": "^1.18.4",
+    "path": "^0.12.7",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
-    "faker": "^4.1.0",
-    "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dnd": "^5.0.0",
@@ -30,7 +30,8 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "sequelize": "^4.38.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
