@@ -1,5 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 //
 // import { connect } from 'react-redux';
 
@@ -29,13 +30,14 @@ export default class LoginPage extends React.Component {
   }
 
   render() {
+    console.log('Login Component Rendered');
     const { username, password, submitted } = this.state;
     return (
       <div>
         <h1>Login</h1>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label htmlfor="username">Username </label>
+            <label htmlFor="username">Username </label>
             <input
               type="text"
               name="username"
@@ -44,7 +46,7 @@ export default class LoginPage extends React.Component {
             />
           </div>
           <div>
-            <label htmlfor="password">Password </label>
+            <label htmlFor="password">Password </label>
             <input
               type="text"
               name="password"
@@ -54,7 +56,7 @@ export default class LoginPage extends React.Component {
           </div>
           <div>
             <input type="submit" value="Login" />
-            {/* <button>Register</button> */}
+            <Link to="/registration">Register</Link>
           </div>
         </form>
       </div>
