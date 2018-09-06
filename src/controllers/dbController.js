@@ -84,8 +84,22 @@ const databaseController = {
     })
   }
   ,
-  patchTask: () => { },
-  patchUser: () => { },
+  patchTask: (req, res) => {
+    Task.update(
+      req.body,
+      { returning: true, where: { id: req.params.id } }
+    ).then(function ([rows, [updated]]) {
+      res.json(updated)
+    })
+  },
+  patchUser: (req, res) => {
+    User.update(
+      req.body,
+      { returning: true, where: { id: req.params.id } }
+    ).then(function ([rows, [updated]]) {
+      res.json(updated)
+    })
+  },
   deleteWorkspace: () => { },
   deleteTask: () => { },
   deleteUser: () => { },

@@ -14,17 +14,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "nodemon": "^1.18.4",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
-=======
     "faker": "^4.1.0",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
->>>>>>> ebf5ac1c8915c5a9146efbcad6af489cb9f68ff3
     "react": "^16.4.2",
     "react-dnd": "^5.0.0",
     "react-dnd-html5-backend": "^5.0.1",
