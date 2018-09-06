@@ -17,12 +17,16 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          query:
-          {
-            presets:['react']
+          query: { 
+            presets: ['react', 'es2015', 'env'], 
+            plugins: [
+              "transform-class-properties",
+              "transform-object-rest-spread"
+            ],
+            cacheDirectory: true
           }
     
-        },
+        }, 
       },
       {
         test: /\.scss$/,

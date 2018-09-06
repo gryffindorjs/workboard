@@ -1,0 +1,180 @@
+
+/* .stagesWrapper {
+	white-space: nowrap;
+	overflow: auto;
+	height: 100%;
+}
+.cardWrapper {
+	white-space: normal;
+	min-height: 50px;
+	background: #FFF;
+	margin: 10px 0;
+	padding: 5px 10px;
+	font-size: 13px;
+	box-shadow: 1px 1px 2px rgba(0,0,0, 0.3);
+	vertical-align: top;
+} */
+
+body {
+	background: #e6e6e6;
+	padding: 20px;
+  }
+  
+  .trello-card-wrapper {
+	color: #4d4d4d;
+	text-decoration: none;
+  }
+  
+  .trello-card {
+	border-radius: 4px;
+	padding: 8px;
+	margin: 0 auto;
+	
+	/* Trello css */
+	color: #4d4d4d;
+	background-color: rgb(0, 121, 191);
+	font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+	min-width: 240px;
+	max-width: 316px;
+	line-height: 18px;
+	
+	/* &--labels {
+	  overflow: auto;
+	  position: relative;
+	}
+	
+	&--labels-text {
+	  background-color: #efefef;
+	  border-radius: 4px;
+	  display: block;
+	  float: left;
+	  font-size: 12px;
+	  font-weight: 600;
+	  height: 16px;
+	  line-height: 16px;
+	  margin: 0 4px 4px 0;
+	  min-width: 40px;
+	  max-width: 198px;
+	  overflow: hidden;
+	  padding: 3px 6px;
+	  position: relative;
+	  text-overflow: ellipsis;
+	  text-shadow: none;
+	  width: auto;
+	  white-space: nowrap;
+	  -webkit-font-smoothing: antialiased;
+	  
+	  &__green {
+		background-color: #61bd4f;
+		color: #fff;
+	  }
+  
+	  &__yellow {
+		background-color: #f2d600;
+		color: #fff;
+	  }
+  
+	  &__lime {
+		background-color: #51e898;
+		color: #fff;
+	  }
+  
+	  &__orange {
+		background-color: #ff9f1a;
+		color: #fff;
+	  }
+  
+	  &__red {
+		background-color: #eb5a46;
+		color: #fff;
+	  }
+  
+	  &__purple {
+		background-color: #c377e0;
+		color: #fff;
+	  }
+  
+	  &__blue {
+		background-color: #0079bf;
+		color: #fff;
+	  }
+  
+	  &__pink {
+		background-color: #ff78cb;
+		color: #fff;
+	  }
+  
+	  &__pink {
+		background-color: #4d4d4d;
+		color: #fff;
+	  }
+	}
+	
+	&--content {
+	  background-color: #fff;
+	  border-radius: 3px;
+	  clear: both;
+	  min-height: 20px;
+	  padding: 5px;
+	  display: block;
+	  overflow: hidden;
+	  word-wrap: break-word;
+	}
+	
+	&--title {
+	  color: #4d4d4d;
+	}
+	
+	&--badges {
+	  // clear: both;
+	  display: flex;
+	  float: left;
+	  max-width: 100%;
+	  margin-top: 5px;
+	  
+	 div {
+	   &:nth-child(2) {
+		margin-right: 5px;
+	   }  
+	 }
+	}
+	
+	&--members {
+	  // clear: both;
+	  margin-top: 5px;
+  
+	  ul {
+		display: flex;
+		float: right;
+		list-style-type: none;
+	  }
+	}
+	
+	&--member {
+	  border-radius: 16px;
+	  display: block;
+	  float: left;
+	  height: 32px;
+	  margin: 0 4px 4px 0;
+	  overflow: hidden;
+	  position: relative;
+	  width: 32px;
+	  user-select: none; // no text selection allowed
+  
+	  img {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		object-fit: cover;
+	  }
+	}
+	
+	&--board-title {
+	  align-items: center;
+	  color: #fff;
+	  display: flex;
+	  flex-direction: row;
+	  margin: 0;
+	  padding-top: 8px;
+	} */
+  }
