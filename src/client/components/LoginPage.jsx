@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Router, Route } from 'react-router-dom';
+
 //
 // import { connect } from 'react-redux';
 
 export default class LoginPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       username: '',
@@ -31,6 +31,7 @@ export default class LoginPage extends React.Component {
 
   render() {
     console.log('Login Component Rendered');
+    console.log(this.props);
     const { username, password, submitted } = this.state;
     return (
       <div>
@@ -56,7 +57,6 @@ export default class LoginPage extends React.Component {
           </div>
           <div>
             <input type="submit" value="Login" />
-            <Link to="/registration">Register</Link>
           </div>
         </form>
       </div>
