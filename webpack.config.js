@@ -8,38 +8,41 @@ module.exports = {
   entry: './src/client/components/app.js',
   output: {
     path: path.join(__dirname, outputDirectory),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        },
+          query: {
+            presets: ['react', 'es2015', 'env', 'stage-3']
+          }
+        }
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000',
-      },
-    ],
+        loader: 'url-loader?limit=100000'
+      }
+    ]
   },
   devServer: {
     port: 3000,
     open: true,
     proxy: {
-      '/api': 'http://localhost:8080',
-    },
+      '/api': 'http://localhost:8080'
+    }
   },
   plugins: [
     new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
+      template: './public/index.html'
+    })
+  ]
 };
