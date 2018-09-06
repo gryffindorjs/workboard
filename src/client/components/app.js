@@ -29,7 +29,7 @@ export default class App extends React.Component {
           <TempHome /> // temp home component
         ) : (
           <div>
-            <Router history={history} props={this.state}>
+            <Router history={history}>
               <div>
                 <Link to="/login">Login Here</Link>
                 <br />
