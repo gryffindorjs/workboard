@@ -17,23 +17,25 @@ const TempHome = () => {
 //   return <div>Error Route does not exist</div>;
 // };
 
-
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      loggedIn: false
+      loggedIn: true
     };
   }
   render() {
     return (
-       <div>
-        <h1> Hello World to the Home Page</h1>
+      <div>
+        <h1 style={{ 'text-align': 'center' }}>
+          {' '}
+          Hello World to the Home Page
+        </h1>
         {this.state.loggedIn ? (
           <div>
-          {/* // temp home component */}
-            <TempHome /> 
-            <Board /> 
+            {/* // temp home component */}
+            {/* <TempHome /> */}
+            <Board />
           </div>
         ) : (
           <div>

@@ -17,14 +17,8 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-<<<<<<< HEAD
-          query: {
-            presets: ['react', 'es2015', 'env', 'stage-3']
-          }
-        }
-=======
           query: { 
-            presets: ['react', 'es2015', 'env'], 
+            presets: ['react', 'es2015', 'env', 'stage-3'], 
             plugins: [
               "transform-class-properties",
               "transform-object-rest-spread"
@@ -33,7 +27,6 @@ module.exports = {
           }
     
         }, 
->>>>>>> c852c0b5ed7a1190a2f4086540661459b66d4a71
       },
       {
         test: /\.scss$/,
