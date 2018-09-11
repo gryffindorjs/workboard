@@ -7,34 +7,42 @@ import Board from './board.jsx';
 import LoginPage from './LoginPage.jsx';
 import RegistrationPage from './RegistrationPage.jsx';
 
-const TempHome = () => {
-  console.log('Home Component Rendered');
-  return <div>Home me up Homie</div>;
-};
-
-// const error = () => {
-//   console.log('Error Component Rendered');
-//   return <div>Error Route does not exist</div>;
-// };
-
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      user: {
+        username: '',
+        password: ''
+      }
     };
+    this.changeToTrue = () => {
+      // e.preventDefault();
+      console.log('clicked that button');
+      this.setState({ loggedIn: true });
+      this.state.loggedIn = true;
+    };
+    // this.changeToTrue = this.changeToTrue.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  onSubmit(event) {
+    event.preventDefault();
+    this.setState({ loggedIn: true });
+    // const { username, password } = this.state;
+    // console.log(
+    //   `User: // ${username} // with password: // ${password} // has been submitted`
+    // );
+  }
+
   render() {
+    const { onSubmit } = this.onSubmit;
     return (
       <div>
-        <h1 style={{ 'text-align': 'center' }}>
-          {' '}
-          Hello World to the Home Page
-        </h1>
         {this.state.loggedIn ? (
           <div>
-            {/* // temp home component */}
-            {/* <TempHome /> */}
+            <h1 style={{ 'text-align': 'center' }}> Home Page</h1>
             <Board />
           </div>
         ) : (
@@ -46,9 +54,14 @@ export default class App extends React.Component {
                 <br />
                 <Link to="/registration">Register Here</Link>
 
-                <Route exact path="/login" component={LoginPage} />
+                <Route
+                  exact
+                  path="/login"
+                  render={props => (
+                    <LoginPage {...props} changeToTrue={this.changeToTrue} />
+                  )}
+                />
                 <Route path="/registration" component={RegistrationPage} />
-                {/* <Route component={error} /> */}
               </div>
             </Router>
           </div>
